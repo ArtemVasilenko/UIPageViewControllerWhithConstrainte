@@ -11,11 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? //главное окно
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds) //гоаницы по экрану девайса
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: MyViewController())
+        
         return true
     }
 
